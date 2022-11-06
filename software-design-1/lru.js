@@ -1,4 +1,5 @@
 import {strict as assert} from 'assert';
+import expect from "expect";
 
 class Node {
     constructor(key, value) {
@@ -9,10 +10,10 @@ class Node {
     }
 }
 
-class LRUCache {
+export class LRUCache {
     constructor(capacity = 4) {
         assert(typeof capacity === 'number', 'LRUCache init capacity must be a number');
-        assert(capacity > 0, 'LRUCache init capacity must positive number');
+        assert(capacity >= 1, 'LRUCache init capacity must positive number >=1');
 
         this.head = null;
         this.tail = null;
@@ -65,7 +66,7 @@ class LRUCache {
         let node = this.cache[key];
 
         if (node === this.head) {
-            return node;
+            return node.value;
         }
 
         let previous = node.prev;
@@ -84,17 +85,6 @@ class LRUCache {
         node.prev = null;
         this.head = node;
 
-        return node;
+        return node.value;
     }
 }
-
-// let cache = new LRUCache();
-// cache.put(1, 1);
-// cache.put(2, 2);
-// cache.put(3, 3);
-// cache.put(4, 4);
-// cache.put(5, 5);
-// // вернет Node с value 2
-// console.log('get 2:\n', cache.get(2));
-// // вернет undefined
-// console.log('get 1:\n', cache.get(1));
