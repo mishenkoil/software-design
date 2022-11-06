@@ -1,5 +1,4 @@
-import {strict as assert} from 'assert';
-import expect from "expect";
+import { strict as assert } from 'assert';
 
 class Node {
     constructor(key, value) {

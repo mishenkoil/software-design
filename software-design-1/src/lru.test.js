@@ -1,5 +1,4 @@
 import { LRUCache } from "./lru.js";
-import expect from 'expect';
 
 test('Capacity init value', () => {
     expect(() => (new LRUCache('aboba'))).toThrow('LRUCache init capacity must be a number');

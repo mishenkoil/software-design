@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "lru.js",
+  "main": "src/lru.js",
   "scripts": {
     "test": "jest"
   },
